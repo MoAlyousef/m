@@ -37,7 +37,10 @@ void about() {
             )
         ).append(
             Div().klass("message-body")
-                .inner_html("This site was created using <a href='https://github.com/MoAlyousef/livid'>Livid</a>, a C++ wasm frontend library and uses Bulma and font-awesome for the CSS.")
+                .inner_html("This site is a single page app and was created using "
+                "<a href='https://github.com/MoAlyousef/livid'>Livid</a>, "
+                "a C++ wasm frontend library and uses <a href='https://bulma.io/'>Bulma</a> "
+                "and <a href='https://fontawesome.com/'>fontawesome</a> for the CSS.")
         )
     );
 }
@@ -55,27 +58,32 @@ void contact() {
                 Ul().append(
                     Li().append(
                         A().href("https://twitter.com/MoAlyousef")
-                            .inner_html("<span class='fa fa-twitter'></span>    http://twitter.com/MoAlyousef")
+                            .inner_html("<span class='fa fa-twitter'></span>"
+                            "    http://twitter.com/MoAlyousef")
                     )
                 ).append(
                     Li().append(
                         A().href("https://sa.linkedin.com/in/moalyousef")
-                            .inner_html("<span class='fa fa-linkedin-square'></span>    https://sa.linkedin.com/in/moalyousef")
+                            .inner_html("<span class='fa fa-linkedin-square'></span>"
+                            "    https://sa.linkedin.com/in/moalyousef")
                     )
                 ).append(
                     Li().append(
                         A().href("https://github.com/MoAlyousef")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/MoAlyousef")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef")
                     )
                 ).append(
                     Li().append(
                         A().href("mailto:mohammed.alyousef@neurosrg.com")
-                            .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override; direction: rtl;'>moc.grsoruen@fesuoyla.demmahom</span>")
+                            .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override;"
+                            " direction: rtl;'>moc.grsoruen@fesuoyla.demmahom</span>")
                     )
                 ).append(
                     Li().append(
                         A().href("mailto:maalyousef@kau.edu.sa")
-                            .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override; direction: rtl;'>as.ude.uak@fesuoylaam</span>")
+                            .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override;"
+                            " direction: rtl;'>as.ude.uak@fesuoylaam</span>")
                     )
                 )
             )
@@ -108,35 +116,40 @@ void projs() {
                 Ul().append(
                     Li().append(
                         A().href("https://github.com/fltk-rs/fltk-rs")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/fltk-rs/fltk-rs")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/fltk-rs/fltk-rs")
                     ).append(
                         P().text("Rust bindings for the FLTK gui library.")
                     )
                 ).append(
                     Li().append(
                         A().href("https://github.com/build-cpp/cmkr")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/build-cpp/cmkr")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/build-cpp/cmkr")
                     ).append(
                         P().text("A CMakeLists.txt generator from TOML.")
                     )
                 ).append(
                     Li().append(
                         A().href("https://github.com/MoAlyousef/cfltk")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/MoAlyousef/cfltk")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/cfltk")
                     ).append(
                         P().text("A C89 wrapper for FLTK.")
                     )
                 ).append(
                     Li().append(
                         A().href("https://github.com/MoAlyousef/soloud-rs")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/MoAlyousef/soloud-rs")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/soloud-rs")
                     ).append(
                         P().text("Rust bindings for the Soloud audio playback/synth library.")
                     )
                 ).append(
                     Li().append(
                         A().href("https://github.com/MoAlyousef/livid")
-                            .inner_html("<span class='fa fa-github'></span>    https://github.com/MoAlyousef/livid")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/livid")
                     ).append(
                         P().text("A single header C++ wasm frontend library leveraging Emscripten.")
                     )
@@ -168,7 +181,7 @@ void create_navbar() {
             ).append(
                 A().klass("navbar-item").text("Projects").handle(Event::Click, projs)
             ).append(
-                A().klass("navbar-item").text("Resume").handle(Event::Click, resume)
+                A().klass("navbar-item").text("Resumé").handle(Event::Click, resume)
             ).append(
                 A().klass("navbar-item").text("Contact").handle(Event::Click, contact)
             ).append(
@@ -183,7 +196,7 @@ void create_navbar() {
 
 int main() {
     create_navbar();
-    Div().klass("content is-centered").id("maindiv").append(
+    Div().klass("content").id("maindiv").append(
         Div().klass("card").append(
             Div().klass("card-content").append(
                 Div().inner_html(about_me)
