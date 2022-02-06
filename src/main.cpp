@@ -40,7 +40,8 @@ void about() {
                 .inner_html("This site is a single page app and was created using "
                 "<a href='https://github.com/MoAlyousef/livid'>Livid</a>, "
                 "a C++ wasm frontend library and uses <a href='https://bulma.io/'>Bulma</a> "
-                "and <a href='https://fontawesome.com/'>fontawesome</a> for the CSS.")
+                "and <a href='https://fontawesome.com/'>fontawesome</a> for the CSS. "
+                "The source code can be found <a href='https://github.com/MoAlyousef/MoAlyousef'>here</a>.")
         )
     );
 }
