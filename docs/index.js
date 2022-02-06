@@ -1741,25 +1741,25 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  9384: function($0) {const txt = document.getElementById(Module.UTF8ToString($0)).getAttribute('class'); const cnt = (Module.lengthBytesUTF8(txt) + 1); const ptr = Module._malloc(cnt); Module.stringToUTF8(txt, ptr, cnt); return ptr;},  
- 9600: function($0, $1) {document.getElementById(Module.UTF8ToString($0)) .setAttribute('class', Module.UTF8ToString($1));},  
- 9702: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).innerHTML = Module.UTF8ToString($1);},  
- 9792: function($0, $1) {document.getElementById(Module.UTF8ToString($0)) .appendChild(document.getElementById(Module.UTF8ToString($1)));},  
- 9909: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).textContent = Module.UTF8ToString($1);},  
- 10001: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).href = Module.UTF8ToString($1);},  
- 10086: function($0, $1, $2) {document.getElementById(Module.UTF8ToString($0)) .setAttribute(Module.UTF8ToString($1), Module.UTF8ToString($2));},  
- 10204: function($0, $1, $2, $3) {document.getElementById(Module.UTF8ToString($0)) .addEventListener( Module.UTF8ToString($1), function() { Module.ccall(Module.UTF8ToString($2), 'null', ['number'], [$3]); });},  
- 10383: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).id = Module.UTF8ToString($1);},  
- 10466: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 10621: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 10776: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 10931: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11086: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11241: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11396: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11551: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11706: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
- 11861: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);}
+  9400: function($0) {const txt = document.getElementById(Module.UTF8ToString($0)).getAttribute('class'); const cnt = (Module.lengthBytesUTF8(txt) + 1); const ptr = Module._malloc(cnt); Module.stringToUTF8(txt, ptr, cnt); return ptr;},  
+ 9616: function($0, $1) {document.getElementById(Module.UTF8ToString($0)) .setAttribute('class', Module.UTF8ToString($1));},  
+ 9718: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).innerHTML = Module.UTF8ToString($1);},  
+ 9808: function($0, $1) {document.getElementById(Module.UTF8ToString($0)) .appendChild(document.getElementById(Module.UTF8ToString($1)));},  
+ 9925: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).textContent = Module.UTF8ToString($1);},  
+ 10017: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).href = Module.UTF8ToString($1);},  
+ 10102: function($0, $1, $2) {document.getElementById(Module.UTF8ToString($0)) .setAttribute(Module.UTF8ToString($1), Module.UTF8ToString($2));},  
+ 10220: function($0, $1, $2, $3) {document.getElementById(Module.UTF8ToString($0)) .addEventListener( Module.UTF8ToString($1), function() { Module.ccall(Module.UTF8ToString($2), 'null', ['number'], [$3]); });},  
+ 10399: function($0, $1) {document.getElementById(Module.UTF8ToString($0)).id = Module.UTF8ToString($1);},  
+ 10482: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 10637: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 10792: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 10947: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11102: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11257: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11412: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11567: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11722: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);},  
+ 11877: function($0, $1) {const widget = document.createElement(Module.UTF8ToString($0)); widget.setAttribute('id', Module.UTF8ToString($1)); document.body.appendChild(widget);}
 };
 
 
