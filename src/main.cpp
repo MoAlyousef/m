@@ -163,7 +163,7 @@ void projs() {
 void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
-            A().klass("navbar-item").href("/").append(
+            A().klass("navbar-item").href("/m").append(
                 Img().attr("src", "/assets/brand.png")
             )
         ).append(
@@ -178,7 +178,7 @@ void create_navbar() {
     ).append(
         Div().id("navmenu").klass("navbar-menu").append(
             Div().klass("navbar-start").append(
-                A().klass("navbar-item").href("/").text("Home")
+                A().klass("navbar-item").href("/m").text("Home")
             ).append(
                 A().klass("navbar-item").text("Projects").handle(Event::Click, projs)
             ).append(
