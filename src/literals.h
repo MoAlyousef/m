@@ -136,7 +136,7 @@ static const char *about_me = R"lit(
 </div>
 <div class="columns is-mobile is-centered">
 <div class="column is-half">
-    <img src="/assets/image.jpg" alt="Mohammed Alyousef" width="250" height="250">
+    <img src="assets/image.jpg" alt="Mohammed Alyousef" width="250" height="250">
 </div>
 </div>
 <div>

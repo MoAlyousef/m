@@ -164,7 +164,7 @@ void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
             A().klass("navbar-item").href("index.html").append(
-                Img().attr("src", "/assets/brand.png")
+                Img().attr("src", "assets/brand.png")
             )
         ).append(
             A().klass("navbar-burger").append(
