@@ -16,6 +16,7 @@ using Article = Widget<WidgetType::Article>;
 using Li = Widget<WidgetType::Li>;
 using Ul = Widget<WidgetType::Ul>;
 
+// Expands the bulma navbar menu, since we don't use bulma.js
 void expand() {
     auto nav_menu = WidgetBase::from_id("navmenu");
     auto is_active = nav_menu.klass().find("is-active") != std::string::npos;
@@ -27,6 +28,7 @@ void expand() {
 }
 
 // clang-format off
+// The About navbar item maindiv contents
 void about() {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
@@ -46,6 +48,7 @@ void about() {
     );
 }
 
+// The Contact navbar item maindiv contents
 void contact() {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
@@ -92,18 +95,20 @@ void contact() {
     );
 }
 
+// The Resume navbar item maindiv contents
 void resume() {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                Div().inner_html(my_resume)
+                Div().inner_html(my_resume) // We use a string literal which contains html elements
             )
         )
     );
 }
 
+// The Projects navbar item maindiv contents
 void projs() {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
@@ -160,6 +165,7 @@ void projs() {
     );
 }
 
+// Creates a navbar
 void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
@@ -173,7 +179,7 @@ void create_navbar() {
                 Span()
             ).append(
                 Span()
-            ).handle(Event::Click, expand).attr("data-target", "navmenu")
+            ).handle(Event::Click, expand).attr("data-target", "navmenu") // We call expand to expand the burger
         )
     ).append(
         Div().id("navmenu").klass("navbar-menu").append(
@@ -197,11 +203,13 @@ void create_navbar() {
 
 
 int main() {
+    // Create the navbar
     create_navbar();
+    // Create our main div
     Div().klass("content").id("maindiv").append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                Div().inner_html(about_me)
+                Div().inner_html(about_me) // We can use a string literal which uses html elements
             )
         )
     );

@@ -1,3 +1,56 @@
+#pragma once
+
+// We can use string literals which contain html elements.
+// We also use some bulma classes to style certain elements.
+// To use them correctly, we use the element's inner_html() method, instead of text().
+static const char *about_me = R"lit(    
+<h3>Mohammed Alyousef</h3>
+<p>
+    I'm a neurosurgeon at King Abdulaziz University Hospital, who's interested in programming,
+    linguistics and history.
+    I mainly develop using C, C++ and Rust. I contribute to open source software.
+    I'm also interested in linguistics, especially in comparative Semitic linguistics. I'm a
+    language aficionado as well.
+    I speak Arabic, English and French. Fields of history that interest me include ancient history
+    of the Middle East.
+    I also enjoy traveling and photography. I've lived in several countries:
+<ul>
+    <li>
+        Jeddah, Saudi Arabia
+    </li>
+    <li>
+        Manchester, UK
+    </li>
+    <li>
+        Chicago, US
+    </li>
+    <li>
+        Paris, France
+    </li>
+    <li>
+        Brussels, Belgium
+    </li>
+</ul>
+</p>
+</div>
+<div class="columns is-mobile is-centered">
+<div class="column is-half">
+    <img src="assets/image.jpg" alt="Mohammed Alyousef" width="250" height="250">
+</div>
+</div>
+<div>
+    <h3>Details</h3>
+    <p>
+        <strong>Name:</strong><br>
+        Mohammed Alyousef<br>
+        <strong>Work:</strong><br>
+        King Abdulaziz University
+    </p>
+    <strong>Location:</strong><br>
+    Jeddah, Saudi Arabia </p>
+</div>
+)lit";
+
 static const char *my_resume = R"lit(
 <h2>Resumé</h2>
 
@@ -101,53 +154,5 @@ static const char *my_resume = R"lit(
             <p>
         </li>
     </ul>
-</div>
-)lit";
-
-static const char *about_me = R"lit(
-<h3>Mohammed Alyousef</h3>
-<p>
-    I'm a neurosurgeon at King Abdulaziz University Hospital, who's interested in programming,
-    linguistics and history.
-    I mainly develop using C, C++ and Rust. I contribute to open source software.
-    I'm also interested in linguistics, especially in comparative Semitic linguistics. I'm a
-    language aficionado as well.
-    I speak Arabic, English and French. Fields of history that interest me include ancient history
-    of the Middle East.
-    I also enjoy traveling and photography. I've lived in several countries:
-<ul>
-    <li>
-        Jeddah, Saudi Arabia
-    </li>
-    <li>
-        Manchester, UK
-    </li>
-    <li>
-        Chicago, US
-    </li>
-    <li>
-        Paris, France
-    </li>
-    <li>
-        Brussels, Belgium
-    </li>
-</ul>
-</p>
-</div>
-<div class="columns is-mobile is-centered">
-<div class="column is-half">
-    <img src="assets/image.jpg" alt="Mohammed Alyousef" width="250" height="250">
-</div>
-</div>
-<div>
-    <h3>Details</h3>
-    <p>
-        <strong>Name:</strong><br>
-        Mohammed Alyousef<br>
-        <strong>Work:</strong><br>
-        King Abdulaziz University
-    </p>
-    <strong>Location:</strong><br>
-    Jeddah, Saudi Arabia </p>
 </div>
 )lit";
