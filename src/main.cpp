@@ -195,6 +195,7 @@ void create_navbar() {
 }
 // clang-format on
 
+
 int main() {
     create_navbar();
     Div().klass("content").id("maindiv").append(
