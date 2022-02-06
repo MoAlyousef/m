@@ -41,7 +41,7 @@ void about() {
                 "<a href='https://github.com/MoAlyousef/livid'>Livid</a>, "
                 "a C++ wasm frontend library and uses <a href='https://bulma.io/'>Bulma</a> "
                 "and <a href='https://fontawesome.com/'>fontawesome</a> for the CSS. "
-                "The source code can be found <a href='https://github.com/MoAlyousef/MoAlyousef'>here</a>.")
+                "The source code can be found <a href='https://github.com/MoAlyousef/site'>here</a>.")
         )
     );
 }
