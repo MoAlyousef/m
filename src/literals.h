@@ -1,5 +1,7 @@
 #pragma once
 
+namespace site::literals {
+
 // We can use string literals which contain html elements.
 // We also use some bulma classes to style certain elements.
 // To use them correctly, we use the element's inner_html() method, instead of text().
@@ -156,3 +158,5 @@ static const char *my_resume = R"lit(
     </ul>
 </div>
 )lit";
+
+}

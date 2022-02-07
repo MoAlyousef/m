@@ -1,7 +1,7 @@
 #include <livid/livid.hpp>
-#include <string>
+#include <string> // for std::string::npos
 
-#include "literals.h"
+#include "literals.h" // for about_me and my_resume
 
 using namespace livid;
 
@@ -31,6 +31,7 @@ void expand() {
 // The About navbar item maindiv contents
 void about() {
     auto main_div = WidgetBase::from_id("maindiv");
+    // We clear the div from all it's text, including appending elements
     main_div.inner_html("");
     main_div.append(
         Article().klass("message is-info").append(
@@ -55,9 +56,9 @@ void contact() {
     main_div.append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                H1().inner_html("Contact")
+                H1().text("Contact")
             ).append(
-                P().inner_html("I can be contacted using the following media:")
+                P().text("I can be contacted using the following media:")
             ).append(
                 Ul().append(
                     Li().append(
@@ -102,7 +103,7 @@ void resume() {
     main_div.append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                Div().inner_html(my_resume) // We use a string literal which contains html elements
+                Div().inner_html(site::literals::my_resume) // We use a string literal which contains html elements
             )
         )
     );
@@ -115,9 +116,9 @@ void projs() {
     main_div.append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                H1().inner_html("Projects")
+                H1().text("Projects")
             ).append(
-                P().inner_html("Some of my projects:")
+                P().text("Some of my projects:")
             ).append(
                 Ul().append(
                     Li().append(
@@ -171,7 +172,7 @@ void my_index() {
     main_div.append(
         Div().klass("card").append(
             Div().klass("card-content").append(
-                Div().inner_html(about_me) // We can use a string literal which uses html elements
+                Div().inner_html(site::literals::about_me) // We can use a string literal which uses html elements
             )
         )
     );
