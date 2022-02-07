@@ -165,13 +165,25 @@ void projs() {
     );
 }
 
+void my_index() {
+    auto main_div = WidgetBase::from_id("maindiv");
+    main_div.inner_html("");
+    main_div.append(
+        Div().klass("card").append(
+            Div().klass("card-content").append(
+                Div().inner_html(about_me) // We can use a string literal which uses html elements
+            )
+        )
+    );
+}
+
 // Creates a navbar
 void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
-            A().klass("navbar-item").href("index.html").append(
+            A().klass("navbar-item").append(
                 Img().attr("src", "assets/brand.png")
-            )
+            ).handle(Event::Click, my_index)
         ).append(
             A().klass("navbar-burger").append(
                 Span()
@@ -184,7 +196,7 @@ void create_navbar() {
     ).append(
         Div().id("navmenu").klass("navbar-menu").append(
             Div().klass("navbar-start").append(
-                A().klass("navbar-item").href("index.html").text("Home")
+                A().klass("navbar-item").text("Home").handle(Event::Click, my_index)
             ).append(
                 A().klass("navbar-item").text("Projects").handle(Event::Click, projs)
             ).append(
@@ -206,11 +218,7 @@ int main() {
     // Create the navbar
     create_navbar();
     // Create our main div
-    Div().klass("content").id("maindiv").append(
-        Div().klass("card").append(
-            Div().klass("card-content").append(
-                Div().inner_html(about_me) // We can use a string literal which uses html elements
-            )
-        )
-    );
+    Div().klass("content").id("maindiv");
+    // create our index
+    my_index();
 }
