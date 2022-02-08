@@ -8,7 +8,7 @@ namespace site::literals {
 static const char *about_me = R"lit(    
 <h3>Mohammed Alyousef</h3>
 <p>
-    I'm a neurosurgeon at King Abdulaziz University Hospital, who's interested in programming,
+    I'm a neurosurgeon, specialized in skull base surgery, at King Abdulaziz University Hospital, who's interested in programming,
     linguistics and history.
     I mainly develop using C, C++ and Rust. I contribute to open source software.
     I'm also interested in linguistics, especially in comparative Semitic linguistics. I'm a
