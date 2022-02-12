@@ -178,7 +178,7 @@ void my_index() {
     );
 }
 
-// Creates a navbar
+// Creates the main navbar
 void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
