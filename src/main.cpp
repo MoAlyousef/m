@@ -17,7 +17,7 @@ using Li = Widget<WidgetType::Li>;
 using Ul = Widget<WidgetType::Ul>;
 
 // Expands the bulma navbar menu, since we don't use bulma.js
-void expand() {
+void expand(emscripten::val) {
     auto nav_menu = WidgetBase::from_id("navmenu");
     auto is_active = nav_menu.klass().find("is-active") != std::string::npos;
     if (is_active) {
@@ -29,7 +29,7 @@ void expand() {
 
 // clang-format off
 // The About navbar item maindiv contents
-void about() {
+void about(emscripten::val) {
     auto main_div = WidgetBase::from_id("maindiv");
     // We clear the div from all it's text, including appending elements
     main_div.inner_html("");
@@ -50,7 +50,7 @@ void about() {
 }
 
 // The Contact navbar item maindiv contents
-void contact() {
+void contact(emscripten::val) {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
@@ -97,7 +97,7 @@ void contact() {
 }
 
 // The Resume navbar item maindiv contents
-void resume() {
+void resume(emscripten::val) {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
@@ -110,7 +110,7 @@ void resume() {
 }
 
 // The Projects navbar item maindiv contents
-void projs() {
+void projs(emscripten::val) {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
@@ -166,7 +166,7 @@ void projs() {
     );
 }
 
-void my_index() {
+void my_index(emscripten::val) {
     auto main_div = WidgetBase::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
@@ -221,5 +221,5 @@ int main() {
     // Create our main div
     Div().klass("content").id("maindiv");
     // create our index
-    my_index();
+    my_index(emscripten::val::null());
 }
