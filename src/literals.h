@@ -21,16 +21,16 @@ static const char *about_me = R"lit(
         Jeddah, Saudi Arabia
     </li>
     <li>
-        Manchester, UK
+        Manchester, UK - 1 year
     </li>
     <li>
-        Chicago, US
+        Chicago, US - 1 year
     </li>
     <li>
-        Paris, France
+        Paris, France - 8 years
     </li>
     <li>
-        Brussels, Belgium
+        Brussels, Belgium - 1 year
     </li>
 </ul>
 </p>

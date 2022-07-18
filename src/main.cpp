@@ -17,7 +17,8 @@ using Li = Widget<WidgetType::Li>;
 using Ul = Widget<WidgetType::Ul>;
 
 // Expands the bulma navbar menu, since we don't use bulma.js
-void expand(emscripten::val) {
+void expand(emscripten::val)
+{
     auto nav_menu = WidgetBase::from_id("navmenu");
     auto is_active = nav_menu.klass().find("is-active") != std::string::npos;
     if (is_active) {
@@ -62,31 +63,31 @@ void contact(emscripten::val) {
             ).append(
                 Ul().append(
                     Li().append(
-                        A().href("https://twitter.com/MoAlyousef")
+                        A().attr("target", "_blank").href("https://twitter.com/MoAlyousef")
                             .inner_html("<span class='fa fa-twitter'></span>"
                             "    http://twitter.com/MoAlyousef")
                     )
                 ).append(
                     Li().append(
-                        A().href("https://sa.linkedin.com/in/moalyousef")
+                        A().attr("target", "_blank").href("https://sa.linkedin.com/in/moalyousef")
                             .inner_html("<span class='fa fa-linkedin-square'></span>"
                             "    https://sa.linkedin.com/in/moalyousef")
                     )
                 ).append(
                     Li().append(
-                        A().href("https://github.com/MoAlyousef")
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/MoAlyousef")
                     )
                 ).append(
                     Li().append(
-                        A().href("mailto:mohammed.alyousef@neurosrg.com")
+                        A().attr("target", "_blank").href("mailto:mohammed.alyousef@neurosrg.com")
                             .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override;"
                             " direction: rtl;'>moc.grsoruen@fesuoyla.demmahom</span>")
                     )
                 ).append(
                     Li().append(
-                        A().href("mailto:maalyousef@kau.edu.sa")
+                        A().attr("target", "_blank").href("mailto:maalyousef@kau.edu.sa")
                             .inner_html("<span class='fa fa-envelope'></span><span style='unicode-bidi:bidi-override;"
                             " direction: rtl;'>as.ude.uak@fesuoylaam</span>")
                     )
@@ -122,7 +123,7 @@ void projs(emscripten::val) {
             ).append(
                 Ul().append(
                     Li().append(
-                        A().href("https://github.com/fltk-rs/fltk-rs")
+                        A().attr("target", "_blank").href("https://github.com/fltk-rs/fltk-rs")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/fltk-rs/fltk-rs")
                     ).append(
@@ -130,7 +131,7 @@ void projs(emscripten::val) {
                     )
                 ).append(
                     Li().append(
-                        A().href("https://github.com/build-cpp/cmkr")
+                        A().attr("target", "_blank").href("https://github.com/build-cpp/cmkr")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/build-cpp/cmkr")
                     ).append(
@@ -138,7 +139,7 @@ void projs(emscripten::val) {
                     )
                 ).append(
                     Li().append(
-                        A().href("https://github.com/MoAlyousef/cfltk")
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/cfltk")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/MoAlyousef/cfltk")
                     ).append(
@@ -146,7 +147,7 @@ void projs(emscripten::val) {
                     )
                 ).append(
                     Li().append(
-                        A().href("https://github.com/MoAlyousef/soloud-rs")
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/soloud-rs")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/MoAlyousef/soloud-rs")
                     ).append(
@@ -154,11 +155,63 @@ void projs(emscripten::val) {
                     )
                 ).append(
                     Li().append(
-                        A().href("https://github.com/MoAlyousef/livid")
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/livid")
                             .inner_html("<span class='fa fa-github'></span>"
                             "    https://github.com/MoAlyousef/livid")
                     ).append(
                         P().text("A single header C++ wasm frontend library leveraging Emscripten.")
+                    )
+                ).append(
+                    Li().append(
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/livid-rs")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/livid-rs")
+                    ).append(
+                        P().text("A Rust wasm framework leveraging websys.")
+                    )
+                ).append(
+                    Li().append(
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/floui")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/floui")
+                    ).append(
+                        P().text("A single header C++ mobile gui library.")
+                    )
+                ).append(
+                    Li().append(
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/floui-rs")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    https://github.com/MoAlyousef/floui-rs")
+                    ).append(
+                        P().text("A Rust mobile gui library.")
+                    )
+                )
+            )
+        )
+    );
+}
+
+void blogs(emscripten::val) {
+    auto main_div = WidgetBase::from_id("maindiv");
+    main_div.inner_html("");
+    main_div.append(
+        Div().klass("card").append(
+            Div().klass("card-content").append(
+                H1().text("Blogs")
+            ).append(
+                P().text("My blogs:")
+            ).append(
+                Ul().append(
+                    Li().append(
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/2022-07-18-objc-runtime.md")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    Programming against the Objective-C runtime")
+                    )
+                ).append(
+                    Li().append(
+                        A().attr("target", "_blank").href("https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/2021-05-04-cargo.md")
+                            .inner_html("<span class='fa fa-github'></span>"
+                            "    Cargo as a tool to distribute C/C++ executables")
                     )
                 )
             )
@@ -182,11 +235,11 @@ void my_index(emscripten::val) {
 void create_navbar() {
     Nav().klass("navbar bd-navbar").append(
         Div().klass("navbar-brand").append(
-            A().klass("navbar-item").append(
+            A().attr("target", "_blank").klass("navbar-item").append(
                 Img().attr("src", "assets/brand.png")
             ).handle(Event::Click, my_index)
         ).append(
-            A().klass("navbar-burger").append(
+            A().attr("target", "_blank").klass("navbar-burger").append(
                 Span()
             ).append(
                 Span()
@@ -197,15 +250,17 @@ void create_navbar() {
     ).append(
         Div().id("navmenu").klass("navbar-menu").append(
             Div().klass("navbar-start").append(
-                A().klass("navbar-item").text("Home").handle(Event::Click, my_index)
+                A().attr("target", "_blank").klass("navbar-item").text("Home").handle(Event::Click, my_index)
             ).append(
-                A().klass("navbar-item").text("Projects").handle(Event::Click, projs)
+                A().attr("target", "_blank").klass("navbar-item").text("Projects").handle(Event::Click, projs)
             ).append(
-                A().klass("navbar-item").text("Resumé").handle(Event::Click, resume)
+                A().attr("target", "_blank").klass("navbar-item").text("Blogs").handle(Event::Click, blogs)
             ).append(
-                A().klass("navbar-item").text("Contact").handle(Event::Click, contact)
+                A().attr("target", "_blank").klass("navbar-item").text("Resumé").handle(Event::Click, resume)
             ).append(
-                A().klass("navbar-item").text("About").handle(Event::Click, about)
+                A().attr("target", "_blank").klass("navbar-item").text("Contact").handle(Event::Click, contact)
+            ).append(
+                A().attr("target", "_blank").klass("navbar-item").text("About").handle(Event::Click, about)
             )
         ).append(
             Div().klass("navbar-end")
@@ -214,8 +269,8 @@ void create_navbar() {
 }
 // clang-format on
 
-
-int main() {
+int main()
+{
     // Create the navbar
     create_navbar();
     // Create our main div
