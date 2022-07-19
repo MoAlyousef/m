@@ -5,21 +5,10 @@
 
 using namespace livid;
 
-using Nav = Widget<WidgetType::Nav>;
-using Div = Widget<WidgetType::Div>;
-using A = Widget<WidgetType::A>;
-using Span = Widget<WidgetType::Span>;
-using Img = Widget<WidgetType::Img>;
-using H1 = Widget<WidgetType::H1>;
-using P = Widget<WidgetType::P>;
-using Article = Widget<WidgetType::Article>;
-using Li = Widget<WidgetType::Li>;
-using Ul = Widget<WidgetType::Ul>;
-
 // Expands the bulma navbar menu, since we don't use bulma.js
 void expand(emscripten::val)
 {
-    auto nav_menu = WidgetBase::from_id("navmenu");
+    auto nav_menu = Widget::from_id("navmenu");
     auto is_active = nav_menu.klass().find("is-active") != std::string::npos;
     if (is_active) {
         nav_menu.klass("navbar-menu");
@@ -31,7 +20,7 @@ void expand(emscripten::val)
 // clang-format off
 // The About navbar item maindiv contents
 void about(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     // We clear the div from all it's text, including appending elements
     main_div.inner_html("");
     main_div.append(
@@ -52,7 +41,7 @@ void about(emscripten::val) {
 
 // The Contact navbar item maindiv contents
 void contact(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
@@ -99,7 +88,7 @@ void contact(emscripten::val) {
 
 // The Resume navbar item maindiv contents
 void resume(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
@@ -112,7 +101,7 @@ void resume(emscripten::val) {
 
 // The Projects navbar item maindiv contents
 void projs(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
@@ -192,7 +181,7 @@ void projs(emscripten::val) {
 }
 
 void blogs(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
@@ -220,7 +209,7 @@ void blogs(emscripten::val) {
 }
 
 void my_index(emscripten::val) {
-    auto main_div = WidgetBase::from_id("maindiv");
+    auto main_div = Widget::from_id("maindiv");
     main_div.inner_html("");
     main_div.append(
         Div().klass("card").append(
