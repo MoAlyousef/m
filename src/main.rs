@@ -1,4 +1,8 @@
 use livid::{document::Document, enums::*, widget::Widget, widgets::*};
+use pulldown_cmark::{html, Options, Parser};
+use wasm_bindgen::JsCast;
+use wasm_bindgen_futures::JsFuture;
+use web_sys::{Request, RequestInit, RequestMode, Response};
 
 mod literals;
 use literals::*;
@@ -33,6 +37,46 @@ fn my_index(_: &Widget) {
     });
 }
 
+fn fetch(url: &'static str) {
+    wasm_bindgen_futures::spawn_local({
+        let main_div = Widget::from_id("maindiv").unwrap();
+        main_div.set_inner_html("");
+        main_div.append(&{
+            let d = div();
+            d.set_class_name("message-body");
+            d.set_id("subdiv");
+            d
+        });
+        async move {
+            let mut opts = RequestInit::new();
+            opts.method("GET");
+            opts.mode(RequestMode::Cors);
+
+            let request = Request::new_with_str_and_init(url, &opts).unwrap();
+
+            let window = web_sys::window().unwrap();
+            if let Ok(resp_value) = JsFuture::from(window.fetch_with_request(&request)).await {
+                assert!(resp_value.is_instance_of::<Response>());
+                let resp: Response = resp_value.dyn_into().unwrap();
+                let text: String = JsFuture::from(resp.text().unwrap())
+                    .await
+                    .unwrap()
+                    .as_string()
+                    .unwrap();
+                let mut options = Options::empty();
+                options.insert(Options::ENABLE_STRIKETHROUGH);
+                let parser = Parser::new_ext(&text, options);
+
+                // Write to String buffer.
+                let mut html_output: String = String::with_capacity(text.len() * 3 / 2);
+                html::push_html(&mut html_output, parser);
+                let t = Widget::from_id("maindiv").unwrap();
+                t.set_inner_html(&html_output);
+            }
+        }
+    });
+}
+
 fn blogs(_: &Widget) {
     let main_div = Widget::from_id("maindiv").unwrap();
     main_div.set_inner_html("");
@@ -49,8 +93,16 @@ fn blogs(_: &Widget) {
             });
             d.append(&{
                 let p = p();
-                p.set_text_content(Some("My blogs:"));
+                p.set_text_content(Some("For better syntax highlighting, my blogs can also be found here:"));
                 p
+            });
+            d.append(&{
+                let a = a();
+                a.set_attribute("target", "_blank").unwrap();
+                a.set_attribute("href", "https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/").unwrap();
+                a.set_inner_html("<span class='fa fa-github'></span>
+                https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/");
+                a
             });
             d.append(&{
                 let ul = ul();
@@ -58,10 +110,8 @@ fn blogs(_: &Widget) {
                     let li = li();
                     li.append(&{
                         let a = a();
-                        a.set_attribute("target", "_blank").unwrap();
-                        a.set_attribute("href", "https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/2022-07-18-objc-runtime.md").unwrap();
-                        a.set_inner_html("<span class='fa fa-github'></span>
-                         Programming against the Objective-C runtime");
+                        a.set_text_content(Some("Programming against the Objective-C runtime"));
+                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2022-07-18-objc-runtime.md"));
                         a
                     });
                     li
@@ -70,10 +120,8 @@ fn blogs(_: &Widget) {
                     let li = li();
                     li.append(&{
                         let a = a();
-                        a.set_attribute("target", "_blank").unwrap();
-                        a.set_attribute("href", "https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/2021-05-04-cargo.md").unwrap();
-                        a.set_inner_html("<span class='fa fa-github'></span>
-                        Cargo as a tool to distribute C/C++ executables");
+                        a.set_text_content(Some("Cargo as a tool to distribute C/C++ executables"));
+                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2021-05-04-cargo.md"));
                         a
                     });
                     li
@@ -524,6 +572,7 @@ fn main() {
     Document::add_css_link(
         "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
     );
+
     // Create the navbar
     create_navbar();
     // Create our main div
