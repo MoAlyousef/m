@@ -126,6 +126,16 @@ fn blogs(_: &Widget) {
                     });
                     li
                 });
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_text_content(Some("Rust vs C++ for frontend web (wasm) programming"));
+                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2022-7-26-wasm-frontend.md"));
+                        a
+                    });
+                    li
+                });
                 ul
             });
             d
