@@ -37,6 +37,7 @@ fn my_index(_: &Widget) {
     });
 }
 
+#[allow(dead_code)]
 fn fetch(url: &'static str) {
     wasm_bindgen_futures::spawn_local({
         let main_div = Widget::from_id("maindiv").unwrap();
@@ -74,73 +75,6 @@ fn fetch(url: &'static str) {
                 t.set_inner_html(&html_output);
             }
         }
-    });
-}
-
-fn blogs(_: &Widget) {
-    let main_div = Widget::from_id("maindiv").unwrap();
-    main_div.set_inner_html("");
-    main_div.append(&{
-        let d = div();
-        d.set_class_name("card");
-        d.append(&{
-            let d = div();
-            d.set_class_name("card-content");
-            d.append(&{
-                let h = h1();
-                h.set_text_content(Some("Blogs"));
-                h
-            });
-            d.append(&{
-                let p = p();
-                p.set_text_content(Some("For better syntax highlighting, my blogs can also be found here:"));
-                p
-            });
-            d.append(&{
-                let a = a();
-                a.set_attribute("target", "_blank").unwrap();
-                a.set_attribute("href", "https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/").unwrap();
-                a.set_inner_html("<span class='fa fa-github'></span>
-                https://github.com/MoAlyousef/MoAlyousef/blob/main/blogs/");
-                a
-            });
-            d.append(&{
-                let ul = ul();
-                ul.append(&{
-                    let li = li();
-                    li.append(&{
-                        let a = a();
-                        a.set_text_content(Some("Programming against the Objective-C runtime"));
-                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2022-07-18-objc-runtime.md"));
-                        a
-                    });
-                    li
-                });
-                ul.append(&{
-                    let li = li();
-                    li.append(&{
-                        let a = a();
-                        a.set_text_content(Some("Cargo as a tool to distribute C/C++ executables"));
-                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2021-05-04-cargo.md"));
-                        a
-                    });
-                    li
-                });
-                ul.append(&{
-                    let li = li();
-                    li.append(&{
-                        let a = a();
-                        a.set_text_content(Some("Rust vs C++ for frontend web (wasm) programming"));
-                        a.add_callback(Event::Click, |_| fetch("https://raw.githubusercontent.com/MoAlyousef/MoAlyousef/main/blogs/2022-7-26-wasm-frontend.md"));
-                        a
-                    });
-                    li
-                });
-                ul
-            });
-            d
-        });
-        d
     });
 }
 
@@ -535,10 +469,9 @@ fn create_navbar() {
             });
             d.append(&{
                 let a = a();
-                a.set_attribute("target", "_blank").unwrap();
+                a.set_attribute("href", "/blog").unwrap();
                 a.set_class_name("navbar-item");
-                a.set_text_content(Some("Blogs"));
-                a.add_callback(Event::Click, blogs);
+                a.set_text_content(Some("Blog"));
                 a
             });
             d.append(&{
