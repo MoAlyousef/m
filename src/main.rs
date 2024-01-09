@@ -167,6 +167,122 @@ fn contact(_: &Widget) {
     });
 }
 
+fn blog(_: &Widget) {
+    let main_div = Widget::from_id("maindiv").unwrap();
+    main_div.set_inner_html("");
+    main_div.append(&{
+        let d = div();
+        d.set_class_name("card");
+        d.append(&{
+            let d = div();
+            d.set_class_name("card-content");
+            d.append(&{
+                let h = h1();
+                h.set_text_content(Some("Blogs"));
+                h
+            });
+            d.append(&{
+                let p = p();
+                p.set_text_content(Some("My posts:"));
+                p
+            });
+            d.append(&{
+                let ul = ul();
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_attribute("target", "_blank").unwrap();
+                        a.set_attribute("href", "https://moalyousef.github.io/blog/Cargo4cpp.html")
+                            .unwrap();
+                        a.set_inner_html(
+                            "<span class='fa fa-github'></span>
+                            Cargo as a tool to distribute C/C++ executables",
+                        );
+                        a
+                    });
+                    li
+                });
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_attribute("target", "_blank").unwrap();
+                        a.set_attribute(
+                            "href",
+                            "https://moalyousef.github.io/blog/ObjcRuntime.html",
+                        )
+                        .unwrap();
+                        a.set_inner_html(
+                            "<span class='fa fa-github'></span>
+                            Interfacing with the Objective-C runtime",
+                        );
+                        a
+                    });
+                    li
+                });
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_attribute("target", "_blank").unwrap();
+                        a.set_attribute(
+                            "href",
+                            "https://moalyousef.github.io/blog/RustVsCpp4Wasm.html",
+                        )
+                        .unwrap();
+                        a.set_inner_html(
+                            "<span class='fa fa-github'></span>
+                            Rust vs C++ for frontend web (wasm) programming",
+                        );
+                        a
+                    });
+                    li
+                });
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_attribute("target", "_blank").unwrap();
+                        a.set_attribute(
+                            "href",
+                            "https://moalyousef.github.io/blog/Fltkrs2022.html",
+                        )
+                        .unwrap();
+                        a.set_inner_html(
+                            "<span class='fa fa-github'></span>
+                            fltk-rs in 2022",
+                        );
+                        a
+                    });
+                    li
+                });
+                ul.append(&{
+                    let li = li();
+                    li.append(&{
+                        let a = a();
+                        a.set_attribute("target", "_blank").unwrap();
+                        a.set_attribute(
+                            "href",
+                            "https://moalyousef.github.io/blog/WasmCompute.html",
+                        )
+                        .unwrap();
+                        a.set_inner_html(
+                            "<span class='fa fa-github'></span>
+                            Fibonacci benchmarks between js, wasm and server",
+                        );
+                        a
+                    });
+                    li
+                });
+                ul
+            });
+            d
+        });
+        d
+    });
+}
+
 fn projs(_: &Widget) {
     let main_div = Widget::from_id("maindiv").unwrap();
     main_div.set_inner_html("");
@@ -469,8 +585,9 @@ fn create_navbar() {
             });
             d.append(&{
                 let a = a();
-                a.set_attribute("href", "/blog").unwrap();
+                a.set_attribute("target", "_blank").unwrap();
                 a.set_class_name("navbar-item");
+                a.add_callback(Event::Click, blog);
                 a.set_text_content(Some("Blog"));
                 a
             });

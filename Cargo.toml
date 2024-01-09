@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 livid = "0.2.13"
 pulldown-cmark = "0.9.1"
-wasm-bindgen = "0.2.81"
+wasm-bindgen = "0.2.89"
 wasm-bindgen-futures = "0.4.31"
 
 [dependencies.web-sys]
