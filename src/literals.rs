@@ -31,8 +31,8 @@ pub const ABOUT_ME: &str = r#"<h3>Mohammed Alyousef</h3>
     </p>
     </div>
     <div class="columns is-mobile is-centered">
-    <div class="column is-half">
-        <img src="assets/image.jpg" alt="Mohammed Alyousef" width="250" height="250">
+    <div class="row is-half">
+        <img style="border-radius:50%" src="assets/image.jpg" alt="Mohammed Alyousef" width="350" height="350">
     </div>
     </div>
     <div>
